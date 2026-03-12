@@ -1,18 +1,17 @@
 -- BetterBags - All Crafting Knowledge
 -- The War Within (11.x) Profession Knowledge Items
--- Source: https://www.wowhead.com/guide/professions/knowledge-points
 -- Source: https://www.wowhead.com/guide/the-war-within/professions/knowledge-point-treasure-locations
+-- Source: https://www.wowhead.com/guide/professions/knowledge-points
 
 local _, ns = ...
 ns.items = ns.items or {}
 local items = ns.items
 
 -- ============================================================
--- ARTISAN'S CONSORTIUM VENDOR BOOKS (Khaz Algar equivalents)
--- Faded = +10 KP | Exceptional = +10 KP | Pristine = +10 KP (one-time per character)
--- Cost: Artisan's Acuity
+-- ARTISAN'S CONSORTIUM VENDOR BOOKS (Faded / Exceptional / Pristine)
+-- Cost: Artisan's Acuity — one-time purchase per character
 -- ============================================================
-local vendorBooks = {
+local consortiumBooks = {
     -- Alchemy
     [227409] = true, -- Faded Alchemist's Research
     [227420] = true, -- Exceptional Alchemist's Research
@@ -60,15 +59,37 @@ local vendorBooks = {
 }
 
 -- ============================================================
+-- CITY OF THREADS RENOWN VENDOR BOOKS (purchased with Kej currency)
+-- ============================================================
+local cityOfThreadsBooks = {
+    [224024] = true, -- City of Threads Alchemy Book
+    [224038] = true, -- City of Threads Blacksmithing Book
+    [224050] = true, -- City of Threads Enchanting Book
+    [224052] = true, -- City of Threads Engineering Book
+    [224023] = true, -- City of Threads Herbalism Book
+    [224053] = true, -- City of Threads Inscription Book
+    [224054] = true, -- City of Threads Jewelcrafting Book
+    [224056] = true, -- City of Threads Leatherworking Book
+    [224055] = true, -- City of Threads Mining Book
+    [224007] = true, -- City of Threads Skinning Book
+    [224036] = true, -- City of Threads Tailoring Book
+}
+
+-- ============================================================
 -- ALGARI TREATISES (crafted by Inscription, weekly use, +1 KP each)
--- NOTE: Only Engineering and Herbalism IDs verified. Others need Wowhead confirmation.
--- Search: https://www.wowhead.com/items?filter=na=algari+treatise
 -- ============================================================
 local algariTreatises = {
+    [222546] = true, -- Algari Treatise on Alchemy
+    [222554] = true, -- Algari Treatise on Blacksmithing
+    [222550] = true, -- Algari Treatise on Enchanting
     [222621] = true, -- Algari Treatise on Engineering
     [222552] = true, -- Algari Treatise on Herbalism
-    -- TODO: Add remaining Algari Treatise IDs (Alchemy, Blacksmithing, Enchanting,
-    --       Inscription, Jewelcrafting, Leatherworking, Mining, Skinning, Tailoring)
+    [222548] = true, -- Algari Treatise on Inscription
+    [222551] = true, -- Algari Treatise on Jewelcrafting
+    [222549] = true, -- Algari Treatise on Leatherworking
+    [222553] = true, -- Algari Treatise on Mining
+    [222649] = true, -- Algari Treatise on Skinning
+    [222547] = true, -- Algari Treatise on Tailoring
 }
 
 -- ============================================================
@@ -106,64 +127,147 @@ local etherealTomes = {
 }
 
 -- ============================================================
--- WORLD TREASURE KNOWLEDGE ITEMS (+3 KP each, from Khaz Algar world treasures)
+-- OPEN-WORLD TREASURE KNOWLEDGE ITEMS (+3 KP each)
+-- Found in Khaz Algar zone treasures across all professions
 -- Source: https://www.wowhead.com/guide/the-war-within/professions/knowledge-point-treasure-locations
 -- ============================================================
 local treasureItems = {
-    -- Alchemy (226265–226272)
-    [226265] = true, [226266] = true, [226267] = true, [226268] = true,
-    [226269] = true, [226270] = true, [226271] = true, [226272] = true,
-    -- Blacksmithing (226276–226283)
-    [226276] = true, [226277] = true, [226278] = true, [226279] = true,
-    [226280] = true, [226281] = true, [226282] = true, [226283] = true,
-    -- Enchanting (226284–226291)
-    [226284] = true, [226285] = true, [226286] = true, [226287] = true,
-    [226288] = true, [226289] = true, [226290] = true, [226291] = true,
-    -- Engineering (226292–226299)
-    [226292] = true, [226293] = true, [226294] = true, [226295] = true,
-    [226296] = true, [226297] = true, [226298] = true, [226299] = true,
-    -- Herbalism (226300–226307)
-    [226300] = true, [226301] = true, [226302] = true, [226303] = true,
-    [226304] = true, [226305] = true, [226306] = true, [226307] = true,
-    -- Inscription (226308–226315)
-    [226308] = true, [226309] = true, [226310] = true, [226311] = true,
-    [226312] = true, [226313] = true, [226314] = true, [226315] = true,
-    -- Jewelcrafting (226316–226323)
-    [226316] = true, [226317] = true, [226318] = true, [226319] = true,
-    [226320] = true, [226321] = true, [226322] = true, [226323] = true,
-    -- Leatherworking (226324–226331)
-    [226324] = true, [226325] = true, [226326] = true, [226327] = true,
-    [226328] = true, [226329] = true, [226330] = true, [226331] = true,
-    -- Mining (226332–226339)
-    [226332] = true, [226333] = true, [226334] = true, [226335] = true,
-    [226336] = true, [226337] = true, [226338] = true, [226339] = true,
-    -- Skinning (226340–226347)
-    [226340] = true, [226341] = true, [226342] = true, [226343] = true,
-    [226344] = true, [226345] = true, [226346] = true, [226347] = true,
-    -- Tailoring (226348–226355)
-    [226348] = true, [226349] = true, [226350] = true, [226351] = true,
-    [226352] = true, [226353] = true, [226354] = true, [226355] = true,
+    -- Alchemy
+    [226265] = true, -- Earthen Iron Powder
+    [226266] = true, -- Metal Dornogal Frame
+    [226267] = true, -- Reinforced Beaker
+    [226268] = true, -- Engraved Stirring Rod
+    [226269] = true, -- Chemist's Purified Water
+    [226270] = true, -- Sanctified Mortar and Pestle
+    [226271] = true, -- Nerubian Mixing Salts
+    [226272] = true, -- Dark Apothecary's Vial
+    -- Blacksmithing
+    [226276] = true, -- Ancient Earthen Anvil
+    [226277] = true, -- Dornogal Hammer
+    [226278] = true, -- Ringing Hammer Vise
+    [226279] = true, -- Earthen Chisels
+    [226280] = true, -- Holy Flame Forge
+    [226281] = true, -- Radiant Tongs
+    [226282] = true, -- Nerubian Smith's Kit
+    [226283] = true, -- Spiderling's Wire Brush
+    -- Enchanting
+    [226284] = true, -- Grinded Earthen Gem
+    [226285] = true, -- Silver Dornogal Rod
+    [226286] = true, -- Soot-Coated Orb
+    [226287] = true, -- Animated Enchanting Dust
+    [226288] = true, -- Essence of Holy Fire
+    [226289] = true, -- Enchanted Arathi Scroll
+    [226290] = true, -- Book of Dark Magic
+    [226291] = true, -- Void Shard
+    -- Engineering
+    [226292] = true, -- Rock Engineer's Wrench
+    [226293] = true, -- Dornogal Spectacles
+    [226294] = true, -- Inert Mining Bomb
+    [226295] = true, -- Earthen Construct Blueprints
+    [226296] = true, -- Holy Firework Dud
+    [226297] = true, -- Arathi Safety Gloves
+    [226298] = true, -- Puppeted Mechanical Spider
+    [226299] = true, -- Emptied Venom Canister
+    -- Herbalism
+    [226300] = true, -- Ancient Flower
+    [226301] = true, -- Dornogal Gardening Scythe
+    [226302] = true, -- Earthen Digging Fork
+    [226303] = true, -- Fungarian Slicer's Knife
+    [226304] = true, -- Arathi Garden Trowel
+    [226305] = true, -- Arathi Herb Pruner
+    [226306] = true, -- Web-Entangled Lotus
+    [226307] = true, -- Tunneler's Shovel
+    -- Inscription
+    [226308] = true, -- Dornogal Scribe's Quill
+    [226309] = true, -- Historian's Dip Pen
+    [226310] = true, -- Runic Scroll
+    [226311] = true, -- Blue Earthen Pigment
+    [226312] = true, -- Informant's Fountain Pen
+    [226313] = true, -- Calligrapher's Chiseled Marker
+    [226314] = true, -- Nerubian Texts
+    [226315] = true, -- Venomancer's Ink Well
+    -- Jewelcrafting
+    [226316] = true, -- Gentle Jewel Hammer
+    [226317] = true, -- Earthen Gem Pliers
+    [226318] = true, -- Carved Stone File
+    [226319] = true, -- Jeweler's Delicate Drill
+    [226320] = true, -- Arathi Sizing Gauges
+    [226321] = true, -- Librarian's Magnifiers
+    [226322] = true, -- Ritual Caster's Crystal
+    [226323] = true, -- Nerubian Bench Blocks
+    -- Leatherworking
+    [226324] = true, -- Earthen Lacing Tools
+    [226325] = true, -- Dornogal Craftsman's Flat Knife
+    [226326] = true, -- Underground Stropping Compound
+    [226327] = true, -- Earthen Awl
+    [226328] = true, -- Arathi Beveler Set
+    [226329] = true, -- Arathi Leather Burnisher
+    [226330] = true, -- Nerubian Tanning Mallet
+    [226331] = true, -- Curved Nerubian Skinning Knife
+    -- Mining
+    [226332] = true, -- Earthen Miner's Gavel
+    [226333] = true, -- Dornogal Chisel
+    [226334] = true, -- Earthen Excavator's Shovel
+    [226335] = true, -- Regenerating Ore
+    [226336] = true, -- Arathi Precision Drill
+    [226337] = true, -- Devout Archaeologist's Excavator
+    [226338] = true, -- Heavy Spider Crusher
+    [226339] = true, -- Nerubian Mining Supplies
+    -- Skinning
+    [226340] = true, -- Dornogal Carving Knife
+    [226341] = true, -- Earthen Worker's Beams
+    [226342] = true, -- Artisan's Drawing Knife
+    [226343] = true, -- Fungarian's Rich Tannin
+    [226344] = true, -- Arathi Tanning Agent
+    [226345] = true, -- Arathi Craftsman's Spokeshave
+    [226346] = true, -- Nerubian's Slicking Iron
+    [226347] = true, -- Carapace Shiner
+    -- Tailoring
+    [226348] = true, -- Dornogal Seam Ripper
+    [226349] = true, -- Earthen Tape Measure
+    [226350] = true, -- Runed Earthen Pins
+    [226351] = true, -- Earthen Stitcher's Snips
+    [226352] = true, -- Arathi Rotary Cutter
+    [226353] = true, -- Royal Outfitter's Protractor
+    [226354] = true, -- Nerubian Quilt
+    [226355] = true, -- Nerubian's Pincushion
 }
 
 -- ============================================================
--- GATHERING NODE SIDE-ITEMS (drop from gathering nodes, grant KP)
+-- GATHERING NODE SIDE-ITEMS (drop from Khaz Algar gathering nodes, grant KP)
 -- ============================================================
 local gatheringNodeItems = {
     -- Herbalism
-    [224264] = true, -- Deepgrove Petal
-    [224265] = true, -- Deepgrove Rose
+    [224264] = true, -- Deepgrove Petal (+1 KP, 5/week)
+    [224265] = true, -- Deepgrove Rose (+2-4 KP, 1/week)
     -- Mining
-    [224583] = true, -- Slab of Slate
-    [224584] = true, -- Erosion-Polished Slate
+    [224583] = true, -- Slab of Slate (+1 KP, 5/week)
+    [224584] = true, -- Erosion-Polished Slate (+2-4 KP, 1/week)
     -- Skinning
-    [224780] = true, -- Toughened Tempest Pelt
-    [224781] = true, -- Abyssal Fur
+    [224780] = true, -- Toughened Tempest Pelt (+1 KP, 5/week)
+    [224781] = true, -- Abyssal Fur (+2-4 KP, 1/week)
+}
+
+-- ============================================================
+-- MISCELLANEOUS KNOWLEDGE ITEMS
+-- Catch-up items, disenchant drops, patron order rewards
+-- ============================================================
+local miscItems = {
+    -- Enchanting (from disenchanting)
+    [227659] = true, -- Fleeting Arcane Manifestation (+1 KP)
+    [227661] = true, -- Gleaming Telluric Crystal (+4 KP)
+    [227662] = true, -- Shimmering Dust (catch-up)
+    -- Tailoring
+    [228738] = true, -- Flicker of Tailoring Knowledge (crafter catch-up)
+    [228739] = true, -- Glimmer of Tailoring Knowledge (patron order)
 }
 
 -- Register all items into shared namespace
-for id in pairs(vendorBooks) do items[id] = true end
+for id in pairs(consortiumBooks) do items[id] = true end
+for id in pairs(cityOfThreadsBooks) do items[id] = true end
 for id in pairs(algariTreatises) do items[id] = true end
 for id in pairs(undermineTreatises) do items[id] = true end
 for id in pairs(etherealTomes) do items[id] = true end
 for id in pairs(treasureItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
+for id in pairs(miscItems) do items[id] = true end
