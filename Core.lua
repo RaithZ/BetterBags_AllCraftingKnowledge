@@ -12,6 +12,7 @@ local CATEGORY_NAME = "All Crafting Knowledge"
 local NAME_FRAGMENTS = {
     "Draconic Treatise",
     "Algari Treatise",
+    "Thalassian Treatise",
     "Undermine Treatise",
     "Niffen Notebook",
     "Research Notes",
