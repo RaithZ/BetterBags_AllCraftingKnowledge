@@ -169,8 +169,61 @@ local fishingItems = {
     [255157] = true, -- Abyss Angler's Fish Log
 }
 
+-- ============================================================
+-- GATHERING NODE SIDE-ITEMS (drop from Midnight gathering nodes, grant KP)
+-- ============================================================
+local gatheringNodeItems = {
+    -- Herbalism
+    [238465] = true, -- Thalassian Phoenix Plume (+1 KP)
+    [238466] = true, -- Thalassian Phoenix Tail (+4 KP)
+    -- Mining
+    [237496] = true, -- Igneous Rock Specimen (+1 KP)
+    [237506] = true, -- Septarian Nodule (+3 KP)
+    -- Skinning
+    [238625] = true, -- Fine Void-Tempered Hide (+1 KP)
+    [238626] = true, -- Mana-Infused Bone (+3 KP)
+}
+
+-- ============================================================
+-- CATCH-UP KNOWLEDGE ITEMS (treasure drops)
+-- ============================================================
+local catchupItems = {
+    -- Herbalism (gathering catch-up)
+    [238467] = true, -- Thalassian Phoenix Ember (+1 KP)
+    -- Mining (gathering catch-up)
+    [237507] = true, -- Cloudy Quartz (+1 KP)
+    -- Skinning (gathering catch-up)
+    [238627] = true, -- Manafused Sample (+1 KP)
+    -- Alchemy
+    [259188] = true, -- Lightbloomed Spore Sample (+1 KP)
+    [259189] = true, -- Aged Cruor (+1 KP)
+    -- Blacksmithing
+    [259190] = true, -- Thalassian Whetstone (+2 KP)
+    [259191] = true, -- Infused Quenching Oil (+2 KP)
+    -- Enchanting
+    [259192] = true, -- Voidstorm Ashes (+2 KP)
+    [259193] = true, -- Lost Thalassian Vellum (+2 KP)
+    -- Engineering
+    [259194] = true, -- Dance Gear (+1 KP)
+    [259195] = true, -- Dawn Capacitor (+1 KP)
+    -- Inscription
+    [259196] = true, -- Brilliant Phoenix Ink (+2 KP)
+    [259197] = true, -- Loa-Blessed Rune (+2 KP)
+    -- Jewelcrafting
+    [259198] = true, -- Void-Touched Eversong Diamond Fragments (+2 KP)
+    [259199] = true, -- Harandar Stone Sample (+2 KP)
+    -- Leatherworking
+    [259200] = true, -- Amani Tanning Oil (+2 KP)
+    [259201] = true, -- Thalassian Mana Oil (+2 KP)
+    -- Tailoring
+    [259202] = true, -- Embroidered Memento (+2 KP)
+    [259203] = true, -- Finely Woven Lynx Collar (+2 KP)
+}
+
 -- Register all items into shared namespace
 for id in pairs(thalassianTreatises) do items[id] = true end
 for id in pairs(vendorBooks) do items[id] = true end
 for id in pairs(treasureItems) do items[id] = true end
 for id in pairs(fishingItems) do items[id] = true end
+for id in pairs(gatheringNodeItems) do items[id] = true end
+for id in pairs(catchupItems) do items[id] = true end
