@@ -5,7 +5,7 @@
 
 local addonName, ns = ...
 
-local CATEGORY_NAME = "All Crafting Knowledge"
+local CATEGORY_NAME = "Profession Knowledge"
 
 -- Plain-text name fragments to catch knowledge items not yet in the ID list.
 -- Using plain matching (no regex) for speed.
