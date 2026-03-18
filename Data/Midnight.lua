@@ -184,6 +184,8 @@ local weeklyQuestItems = {
     [263459] = true, -- Thalassian Leatherworker's Journal (+2 KP)
     -- Mining
     [263463] = true, -- Thalassian Miner's Notes (+3 KP)
+    -- Skinning
+    [263461] = true, -- Thalassian Skinner's Notes (+3 KP)
     -- Tailoring
     [263460] = true, -- Thalassian Tailor's Notebook (+2 KP)
 }
@@ -282,6 +284,7 @@ local patronOrderItems = {
 -- ============================================================
 local miscItems = {
     -- Enchanting (from disenchanting, combinable)
+    [267653] = true, -- Glimmering Powder (+1 KP, disenchanting catch-up)
     [267654] = true, -- Swirling Arcane Essence (+1 KP, 5/week)
     [267655] = true, -- Brimming Mana Shard (+4 KP, 1/week, awarded after collecting 5x Swirling Arcane Essence)
 }

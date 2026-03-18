@@ -253,9 +253,10 @@ local renownVendorBooks = {
 }
 
 -- ============================================================
--- ADDITIONAL HERBALISM TREASURE ITEMS (alternate item IDs, +3 KP each)
+-- ADDITIONAL TREASURE ITEMS (alternate item IDs, +3 KP each)
 -- ============================================================
-local additionalHerbalismItems = {
+local additionalTreasureItems = {
+    -- Herbalism
     [238564] = true, -- Ancient Flower
     [238565] = true, -- Dornogal Gardening Scythe
     [238566] = true, -- Earthen Digging Fork
@@ -264,6 +265,15 @@ local additionalHerbalismItems = {
     [238569] = true, -- Arathi Herb Pruner
     [238570] = true, -- Web-Entangled Lotus
     [238571] = true, -- Tunneler's Shovel
+    -- Skinning
+    [238604] = true, -- Dornogal Carving Knife
+    [238605] = true, -- Earthen Worker's Beams
+    [238606] = true, -- Artisan's Drawing Knife
+    [238607] = true, -- Fungarian's Rich Tannin
+    [238608] = true, -- Arathi Tanning Agent
+    [238609] = true, -- Arathi Craftsman's Spokeshave
+    [238610] = true, -- Nerubian's Slicking Iron
+    [238611] = true, -- Carapace Shiner
 }
 
 -- ============================================================
@@ -331,7 +341,7 @@ for id in pairs(undermineTreatises) do items[id] = true end
 for id in pairs(etherealTomes) do items[id] = true end
 for id in pairs(treasureItems) do items[id] = true end
 for id in pairs(renownVendorBooks) do items[id] = true end
-for id in pairs(additionalHerbalismItems) do items[id] = true end
+for id in pairs(additionalTreasureItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
 for id in pairs(miscItems) do items[id] = true end
 for id in pairs(patronOrderItems) do items[id] = true end
