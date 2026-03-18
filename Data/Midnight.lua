@@ -163,6 +163,33 @@ local treasureItems = {
 }
 
 -- ============================================================
+-- WEEKLY QUEST REWARD KNOWLEDGE ITEMS ("X Services Requested" quests)
+-- ============================================================
+local weeklyQuestItems = {
+    -- Alchemy
+    [263454] = true, -- Thalassian Alchemist's Notebook (+1 KP)
+    -- Blacksmithing
+    [263455] = true, -- Thalassian Blacksmith's Journal (+2 KP)
+    -- Enchanting
+    [263464] = true, -- Thalassian Enchanter's Folio (+3 KP)
+    -- Engineering
+    [263456] = true, -- Thalassian Engineer's Notepad (+1 KP)
+    -- Herbalism
+    [263462] = true, -- Thalassian Herbalist's Notes (+3 KP)
+    -- Inscription
+    [263457] = true, -- Thalassian Scribe's Journal (+4 KP)
+    -- Jewelcrafting
+    [263458] = true, -- Thalassian Jewelcrafter's Notebook (+3 KP)
+    -- Leatherworking
+    [263459] = true, -- Thalassian Leatherworker's Journal (+2 KP)
+    -- Mining
+    [263463] = true, -- Thalassian Miner's Notes (+3 KP)
+    -- Tailoring
+    [263460] = true, -- Thalassian Tailor's Notebook (+2 KP)
+}
+
+
+-- ============================================================
 -- FISHING
 -- ============================================================
 local fishingItems = {
@@ -255,6 +282,7 @@ for id in pairs(thalassianTreatises) do items[id] = true end
 for id in pairs(vendorBooks) do items[id] = true end
 for id in pairs(treasureItems) do items[id] = true end
 for id in pairs(fishingItems) do items[id] = true end
+for id in pairs(weeklyQuestItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
 for id in pairs(catchupItems) do items[id] = true end
 for id in pairs(patronOrderItems) do items[id] = true end

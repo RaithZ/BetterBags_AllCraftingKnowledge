@@ -216,8 +216,173 @@ local worldDrops = {
     [210462] = true, -- Plush Pillow
 }
 
+-- ============================================================
+-- GATHERING NODE SIDE-ITEMS (+1 KP, drop from Dragon Isles nodes)
+-- ============================================================
+local gatheringNodeItems = {
+    -- Herbalism
+    [194041] = true, -- Driftbloom Sprout (+1 KP)
+    [194054] = true, -- Dredged Seedling (+1 KP)
+    [194055] = true, -- Primordial Soil (+1 KP)
+    [194061] = true, -- Suffocating Spores (+1 KP)
+    [194080] = true, -- Peculiar Bud (+1 KP)
+    [194081] = true, -- Mutated Root (+1 KP)
+    [200677] = true, -- Dreambloom Petal (+1 KP)
+    [202014] = true, -- Infused Pollen (+1 KP)
+    [200678] = true, -- Dreambloom (+3 KP)
+    -- Mining
+    [194039] = true, -- Heated Ore Sample (+1 KP)
+    [194062] = true, -- Unyielding Stone Chunk (+1 KP)
+    [194063] = true, -- Glowing Fragment (+1 KP)
+    [194064] = true, -- Intricate Geode (+1 KP)
+    [194078] = true, -- Perfect Draconium Scale (+1 KP)
+    [194079] = true, -- Pure Serevite Nugget (+1 KP)
+    [201300] = true, -- Iridescent Ore Fragments (+1 KP)
+    [202011] = true, -- Elementally Charged Stone (+1 KP)
+    [201301] = true, -- Iridescent Ore (+3 KP)
+    -- Herbalism/Mining Field Notes
+    [199115] = true, -- Herbalism Field Notes (+3 KP)
+    [199122] = true, -- Mining Field Notes (+3 KP)
+}
+
+-- ============================================================
+-- MOB DROP KNOWLEDGE ITEMS (+1 KP, drop from Dragon Isles mobs)
+-- ============================================================
+local mobDropItems = {
+    -- Alchemy
+    [193891] = true, -- Experimental Substance (+1 KP)
+    [193897] = true, -- Reawakened Catalyst (+1 KP)
+    [198963] = true, -- Decaying Phlegm (+1 KP)
+    [198964] = true, -- Elementious Splinter (+1 KP)
+    -- Blacksmithing
+    [192131] = true, -- Valdrakken Weapon Chain (+1 KP)
+    [192132] = true, -- Draconium Blade Sharpener (+1 KP)
+    [198965] = true, -- Primeval Earth Fragment (+1 KP)
+    [198966] = true, -- Molten Globule (+1 KP)
+    -- Enchanting
+    [193900] = true, -- Prismatic Focusing Shard (+1 KP)
+    [193901] = true, -- Primal Dust (+1 KP)
+    [198967] = true, -- Primordial Aether (+1 KP)
+    [198968] = true, -- Primalist Charm (+1 KP)
+    -- Engineering
+    [193902] = true, -- Eroded Titan Gizmo (+1 KP)
+    [193903] = true, -- Watcher Power Core (+1 KP)
+    [198969] = true, -- Keeper's Mark (+1 KP)
+    [198970] = true, -- Infinitely Attachable Pair o' Docks (+1 KP)
+    -- Inscription
+    [193904] = true, -- Phoenix Feather Quill (+1 KP)
+    [193905] = true, -- Iskaaran Trading Ledger (+1 KP)
+    [198971] = true, -- Curious Djaradin Rune (+1 KP)
+    [198972] = true, -- Draconic Glamour (+1 KP)
+    -- Jewelcrafting
+    [193907] = true, -- Chipped Tyrstone (+1 KP)
+    [193909] = true, -- Ancient Gem Fragments (+1 KP)
+    [198973] = true, -- Incandescent Curio (+1 KP)
+    [198974] = true, -- Elegantly Engraved Embellishment (+1 KP)
+    -- Leatherworking
+    [193910] = true, -- Molted Dragon Scales (+1 KP)
+    [193913] = true, -- Preserved Animal Parts (+1 KP)
+    [198975] = true, -- Ossified Hide (+1 KP)
+    [198976] = true, -- Exceedingly Soft Skin (+1 KP)
+    -- Tailoring
+    [193898] = true, -- Umbral Bone Needle (+1 KP)
+    [193899] = true, -- Primalweave Spindle (+1 KP)
+    [198977] = true, -- Ohn'arhan Weave (+1 KP)
+    [198978] = true, -- Stupidly Effective Stitchery (+1 KP)
+}
+
+-- ============================================================
+-- FORBIDDEN REACH RARE DROPS (+1 KP each)
+-- ============================================================
+local forbiddenReachDrops = {
+    [204222] = true, -- Conductive Ametrine Shard (+1 Jewelcrafting)
+    [204224] = true, -- Speck of Arcane Awareness (+1 Enchanting)
+    [204225] = true, -- Perfect Windfeather (+1 Tailoring)
+    [204226] = true, -- Blazehoof Ashes (+1 Alchemy)
+    [204227] = true, -- Everflowing Antifreeze (+1 Engineering)
+    [204228] = true, -- Undigested Hochenblume Petal (+1 Herbalism)
+    [204229] = true, -- Glimmering Rune of Arcantrix (+1 Inscription)
+    [204230] = true, -- Dense Seaforged Javelin (+1 Blacksmithing)
+    [204232] = true, -- Slyvern Alpha Claw (+1 Leatherworking)
+    [204233] = true, -- Impenetrable Elemental Core (+1 Mining)
+    [204632] = true, -- Tectonic Rock Fragment (+1 Mining)
+}
+
+-- ============================================================
+-- PATRON ORDER KNOWLEDGE ITEMS (+2/+3 KP)
+-- ============================================================
+local patronOrderItems = {
+    [198606] = true, -- Blacksmith's Writ (+3 KP)
+    [198607] = true, -- Scribe's Glyphs (+3 KP)
+    [198608] = true, -- Alchemy Notes (+3 KP)
+    [198609] = true, -- Tailoring Examples (+3 KP)
+    [198610] = true, -- Enchanter's Script (+3 KP)
+    [198611] = true, -- Engineering Details (+2 KP)
+    [198612] = true, -- Jeweler's Cuts (+3 KP)
+    [198613] = true, -- Leatherworking Designs (+3 KP)
+    [198667] = true, -- Spare Djaradin Tools (+3 KP)
+    [201003] = true, -- Furry Gloop (+3 KP)
+}
+
+-- ============================================================
+-- NOTEBOOK OF CRAFTING KNOWLEDGE (+5/+10 KP, weekly quest rewards)
+-- ============================================================
+local notebooksOfKnowledge = {
+    [201706] = true, -- Notebook of Crafting Knowledge - Alchemy (+5 KP)
+    [201708] = true, -- Notebook of Crafting Knowledge - Blacksmithing (+5 KP)
+    [201709] = true, -- Notebook of Crafting Knowledge - Enchanting (+5 KP)
+    [201710] = true, -- Notebook of Crafting Knowledge - Engineering (+5 KP)
+    [201711] = true, -- Notebook of Crafting Knowledge - Inscription (+5 KP)
+    [201712] = true, -- Notebook of Crafting Knowledge - Jewelcrafting (+5 KP)
+    [201713] = true, -- Notebook of Crafting Knowledge - Leatherworking (+5 KP)
+    [201715] = true, -- Notebook of Crafting Knowledge - Tailoring (+5 KP)
+    [201705] = true, -- Notebook of Crafting Knowledge - Herbalism (+5 KP)
+    [201700] = true, -- Notebook of Crafting Knowledge - Mining (+5 KP)
+    [201717] = true, -- Notebook of Crafting Knowledge - Herbalism (+10 KP)
+    [201716] = true, -- Notebook of Crafting Knowledge - Mining (+10 KP)
+}
+
+-- ============================================================
+-- BARTERED NOTES (sold by Ponzo, 25 Barter Boulders, +5 KP each)
+-- ============================================================
+local barteredNotes = {
+    [205428] = true, -- Bartered Alchemy Notes
+    [205427] = true, -- Bartered Blacksmithing Notes
+    [205426] = true, -- Bartered Enchanting Notes
+    [205424] = true, -- Bartered Engineering Notes
+    [205429] = true, -- Bartered Inscription Notes
+    [205445] = true, -- Bartered Jewelcrafting Notes
+    [205425] = true, -- Bartered Leatherworking Notes
+    [205431] = true, -- Bartered Mining Notes
+    [205432] = true, -- Bartered Herbalism Notes
+    [205430] = true, -- Bartered Tailoring Notes
+}
+
+-- ============================================================
+-- BARTERED JOURNALS (sold by Ponzo, 90 Barter Bricks, +5 KP each)
+-- ============================================================
+local barteredJournals = {
+    [205439] = true, -- Bartered Alchemy Journal
+    [205438] = true, -- Bartered Blacksmithing Journal
+    [205437] = true, -- Bartered Enchanting Journal
+    [205435] = true, -- Bartered Engineering Journal
+    [205440] = true, -- Bartered Inscription Journal
+    [205434] = true, -- Bartered Jewelcrafting Journal
+    [205436] = true, -- Bartered Leatherworking Journal
+    [205442] = true, -- Bartered Mining Journal
+    [205443] = true, -- Bartered Herbalism Journal
+    [205441] = true, -- Bartered Tailoring Journal
+}
+
 -- Register all items into shared namespace
 for id in pairs(vendorBooks) do items[id] = true end
 for id in pairs(draconicTreatises) do items[id] = true end
 for id in pairs(niffenNotebooks) do items[id] = true end
 for id in pairs(worldDrops) do items[id] = true end
+for id in pairs(gatheringNodeItems) do items[id] = true end
+for id in pairs(mobDropItems) do items[id] = true end
+for id in pairs(forbiddenReachDrops) do items[id] = true end
+for id in pairs(patronOrderItems) do items[id] = true end
+for id in pairs(notebooksOfKnowledge) do items[id] = true end
+for id in pairs(barteredNotes) do items[id] = true end
+for id in pairs(barteredJournals) do items[id] = true end

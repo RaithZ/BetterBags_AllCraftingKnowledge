@@ -234,6 +234,39 @@ local treasureItems = {
 }
 
 -- ============================================================
+-- RENOWN VENDOR KNOWLEDGE BOOKS (+10 KP each, cost 50 Artisan's Acuity)
+-- ============================================================
+local renownVendorBooks = {
+    -- Council of Dornogal (Rank 12) — sold by Auditor Balwurz in Dornogal
+    [224645] = true, -- Jewel-Etched Alchemy Notes
+    [224647] = true, -- Jewel-Etched Blacksmithing Notes
+    [224652] = true, -- Jewel-Etched Enchanting Notes
+    [224648] = true, -- Jewel-Etched Tailoring Notes
+    -- The Assembly of the Deeps (Rank 12) — sold by Waxmonger Squick in The Ringing Deeps
+    [224651] = true, -- Machine-Learned Mining Notes
+    [224653] = true, -- Machine-Learned Engineering Notes
+    [224654] = true, -- Machine-Learned Inscription Notes
+    -- Hallowfall Arathi (Rank 14) — sold by Auralia Steelstrike in Hallowfall
+    [224655] = true, -- Void-Lit Jewelcrafting Notes
+    [224656] = true, -- Void-Lit Herbalism Notes
+    [224658] = true, -- Void-Lit Leatherworking Notes
+}
+
+-- ============================================================
+-- ADDITIONAL HERBALISM TREASURE ITEMS (alternate item IDs, +3 KP each)
+-- ============================================================
+local additionalHerbalismItems = {
+    [238564] = true, -- Ancient Flower
+    [238565] = true, -- Dornogal Gardening Scythe
+    [238566] = true, -- Earthen Digging Fork
+    [238567] = true, -- Fungarian Slicer's Knife
+    [238568] = true, -- Arathi Garden Trowel
+    [238569] = true, -- Arathi Herb Pruner
+    [238570] = true, -- Web-Entangled Lotus
+    [238571] = true, -- Tunneler's Shovel
+}
+
+-- ============================================================
 -- GATHERING NODE SIDE-ITEMS (drop from Khaz Algar gathering nodes, grant KP)
 -- ============================================================
 local gatheringNodeItems = {
@@ -297,6 +330,8 @@ for id in pairs(algariTreatises) do items[id] = true end
 for id in pairs(undermineTreatises) do items[id] = true end
 for id in pairs(etherealTomes) do items[id] = true end
 for id in pairs(treasureItems) do items[id] = true end
+for id in pairs(renownVendorBooks) do items[id] = true end
+for id in pairs(additionalHerbalismItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
 for id in pairs(miscItems) do items[id] = true end
 for id in pairs(patronOrderItems) do items[id] = true end
