@@ -257,9 +257,37 @@ local miscItems = {
     [227659] = true, -- Fleeting Arcane Manifestation (+1 KP)
     [227661] = true, -- Gleaming Telluric Crystal (+4 KP)
     [227662] = true, -- Shimmering Dust (catch-up)
+
+}
+
+-- ============================================================
+-- PATRON ORDER KNOWLEDGE ITEMS
+-- ============================================================
+local patronOrderItems = {
+    -- Alchemy
+    [228724] = true, -- Flicker of Alchemy Knowledge (+1 KP)
+    [228725] = true, -- Glimmer of Alchemy Knowledge (+2 KP)
+    -- Blacksmithing
+    [228726] = true, -- Flicker of Blacksmithing Knowledge (+1 KP)
+    [228727] = true, -- Glimmer of Blacksmithing Knowledge (+2 KP)
+    -- Enchanting
+    [228728] = true, -- Flicker of Enchanting Knowledge (+1 KP)
+    [228729] = true, -- Glimmer of Enchanting Knowledge (+2 KP)
+    -- Engineering
+    [228730] = true, -- Flicker of Engineering Knowledge (+1 KP)
+    [228731] = true, -- Glimmer of Engineering Knowledge (+2 KP)
+    -- Inscription
+    [228732] = true, -- Flicker of Inscription Knowledge (+1 KP)
+    [228733] = true, -- Glimmer of Inscription Knowledge (+2 KP)
+    -- Jewelcrafting
+    [228734] = true, -- Flicker of Jewelcrafting Knowledge (+1 KP)
+    [228735] = true, -- Glimmer of Jewelcrafting Knowledge (+2 KP)
+    -- Leatherworking
+    [228736] = true, -- Flicker of Leatherworking Knowledge (+1 KP)
+    [228737] = true, -- Glimmer of Leatherworking Knowledge (+2 KP)
     -- Tailoring
-    [228738] = true, -- Flicker of Tailoring Knowledge (crafter catch-up)
-    [228739] = true, -- Glimmer of Tailoring Knowledge (patron order)
+    [228738] = true, -- Flicker of Tailoring Knowledge (+1 KP)
+    [228739] = true, -- Glimmer of Tailoring Knowledge (+2 KP)
 }
 
 -- Register all items into shared namespace
@@ -271,3 +299,4 @@ for id in pairs(etherealTomes) do items[id] = true end
 for id in pairs(treasureItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
 for id in pairs(miscItems) do items[id] = true end
+for id in pairs(patronOrderItems) do items[id] = true end
