@@ -220,6 +220,36 @@ local catchupItems = {
     [259203] = true, -- Finely Woven Lynx Collar (+2 KP)
 }
 
+-- ============================================================
+-- PATRON ORDER KNOWLEDGE ITEMS
+-- ============================================================
+local patronOrderItems = {
+    -- Alchemy
+    [246321] = true, -- Glimmer of Midnight Alchemy Knowledge (+2 KP)
+    [246320] = true, -- Flicker of Midnight Alchemy Knowledge (+1 KP)
+    -- Blacksmithing
+    [246323] = true, -- Glimmer of Midnight Blacksmithing Knowledge (+2 KP)
+    [246322] = true, -- Flicker of Midnight Blacksmithing Knowledge (+1 KP)
+    -- Enchanting
+    [246325] = true, -- Glimmer of Midnight Enchanting Knowledge (+2 KP)
+    [246324] = true, -- Flicker of Midnight Enchanting Knowledge (+1 KP)
+    -- Engineering
+    [246327] = true, -- Glimmer of Midnight Engineering Knowledge (+2 KP)
+    [246326] = true, -- Flicker of Midnight Engineering Knowledge (+1 KP)
+    -- Inscription
+    [246329] = true, -- Glimmer of Midnight Inscription Knowledge (+2 KP)
+    [246328] = true, -- Flicker of Midnight Inscription Knowledge (+1 KP)
+    -- Jewelcrafting
+    [246331] = true, -- Glimmer of Midnight Jewelcrafting Knowledge (+2 KP)
+    [246330] = true, -- Flicker of Midnight Jewelcrafting Knowledge (+1 KP)
+    -- Leatherworking
+    [246333] = true, -- Glimmer of Midnight Leatherworking Knowledge (+2 KP)
+    [246332] = true, -- Flicker of Midnight Leatherworking Knowledge (+1 KP)
+    -- Tailoring
+    [246335] = true, -- Glimmer of Midnight Tailoring Knowledge (+2 KP)
+    [246334] = true, -- Flicker of Midnight Tailoring Knowledge (+1 KP)
+}
+
 -- Register all items into shared namespace
 for id in pairs(thalassianTreatises) do items[id] = true end
 for id in pairs(vendorBooks) do items[id] = true end
@@ -227,3 +257,4 @@ for id in pairs(treasureItems) do items[id] = true end
 for id in pairs(fishingItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
 for id in pairs(catchupItems) do items[id] = true end
+for id in pairs(patronOrderItems) do items[id] = true end
