@@ -277,6 +277,15 @@ local patronOrderItems = {
     [246334] = true, -- Flicker of Midnight Tailoring Knowledge (+1 KP)
 }
 
+-- ============================================================
+-- MISCELLANEOUS KNOWLEDGE ITEMS
+-- ============================================================
+local miscItems = {
+    -- Enchanting (from disenchanting, combinable)
+    [267654] = true, -- Swirling Arcane Essence (+1 KP, 5/week)
+    [267655] = true, -- Brimming Mana Shard (+4 KP, 1/week, awarded after collecting 5x Swirling Arcane Essence)
+}
+
 -- Register all items into shared namespace
 for id in pairs(thalassianTreatises) do items[id] = true end
 for id in pairs(vendorBooks) do items[id] = true end
@@ -286,3 +295,4 @@ for id in pairs(weeklyQuestItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
 for id in pairs(catchupItems) do items[id] = true end
 for id in pairs(patronOrderItems) do items[id] = true end
+for id in pairs(miscItems) do items[id] = true end
