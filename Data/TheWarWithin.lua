@@ -249,6 +249,7 @@ local renownVendorBooks = {
     -- Hallowfall Arathi (Rank 14) — sold by Auralia Steelstrike in Hallowfall
     [224655] = true, -- Void-Lit Jewelcrafting Notes
     [224656] = true, -- Void-Lit Herbalism Notes
+    [224657] = true, -- Void-Lit Skinning Notes
     [224658] = true, -- Void-Lit Leatherworking Notes
 }
 
@@ -283,12 +284,76 @@ local gatheringNodeItems = {
     -- Herbalism
     [224264] = true, -- Deepgrove Petal (+1 KP, 5/week)
     [224265] = true, -- Deepgrove Rose (+2-4 KP, 1/week)
+    [224835] = true, -- Deepgrove Roots (+1 KP, catch-up node drop)
     -- Mining
     [224583] = true, -- Slab of Slate (+1 KP, 5/week)
     [224584] = true, -- Erosion-Polished Slate (+2-4 KP, 1/week)
+    [224838] = true, -- Null Sliver (+1 KP, catch-up node drop)
     -- Skinning
     [224780] = true, -- Toughened Tempest Pelt (+1 KP, 5/week)
     [224781] = true, -- Abyssal Fur (+2-4 KP, 1/week)
+    [224782] = true, -- Razor Talon (+1 KP, catch-up drop from skinning creatures)
+}
+
+-- ============================================================
+-- MOB DROP / CATCH-UP KNOWLEDGE ITEMS (+1 or +2 KP each)
+-- Drop from mobs, disturbed earth, and world treasures in Khaz Algar
+-- ============================================================
+local mobDropItems = {
+    -- Alchemy
+    [225234] = true, -- Alchemical Sediment (+2 KP)
+    [225235] = true, -- Deepstone Crucible (+2 KP)
+    -- Blacksmithing
+    [225232] = true, -- Coreway Billet (+1 KP)
+    [225233] = true, -- Dense Bladestone (+1 KP)
+    -- Enchanting
+    [225230] = true, -- Crystalline Repository (+1 KP)
+    [225231] = true, -- Powdered Fulgurance (+1 KP)
+    -- Engineering
+    [225228] = true, -- Rust-Locked Mechanism (+1 KP)
+    [225229] = true, -- Earthen Induction Coil (+1 KP)
+    -- Inscription
+    [225226] = true, -- Striated Inkstone (+2 KP)
+    [225227] = true, -- Wax-Sealed Records (+2 KP)
+    -- Jewelcrafting
+    [225224] = true, -- Diaphanous Gem Shards (+2 KP)
+    [225225] = true, -- Deepstone Fragment (+2 KP)
+    -- Leatherworking
+    [225222] = true, -- Stone-Leather Swatch (+1 KP)
+    [225223] = true, -- Sturdy Nerubian Carapace (+1 KP)
+    -- Tailoring
+    [225220] = true, -- Chitin Needle (+1 KP)
+    [225221] = true, -- Spool of Webweave (+1 KP)
+}
+
+-- ============================================================
+-- QUEST REWARD KNOWLEDGE ITEMS
+-- ============================================================
+local questRewardItems = {
+    [224807] = true, -- Algari Skinner's Notes (+3 KP)
+    [224817] = true, -- Algari Herbalist's Notes (+3 KP)
+    [224818] = true, -- Algari Miner's Notes (+3 KP)
+    [227667] = true, -- Algari Enchanter's Folio (+3 KP)
+}
+
+-- ============================================================
+-- WEEKLY QUEST REWARD KNOWLEDGE ITEMS ("X Services Requested" quests)
+-- ============================================================
+local weeklyQuestItems = {
+    -- Alchemy
+    [228773] = true, -- Algari Alchemist's Notebook (+2 KP)
+    -- Blacksmithing
+    [228774] = true, -- Algari Blacksmith's Journal (+2 KP)
+    -- Engineering
+    [228775] = true, -- Algari Engineer's Notepad (+1 KP)
+    -- Inscription
+    [228776] = true, -- Algari Scribe's Journal (+2 KP)
+    -- Jewelcrafting
+    [228777] = true, -- Algari Jewelcrafter's Notebook (+2 KP)
+    -- Leatherworking
+    [228778] = true, -- Algari Leatherworker's Journal (+2 KP)
+    -- Tailoring
+    [228779] = true, -- Algari Tailor's Notebook (+2 KP)
 }
 
 -- ============================================================
@@ -343,5 +408,8 @@ for id in pairs(treasureItems) do items[id] = true end
 for id in pairs(renownVendorBooks) do items[id] = true end
 for id in pairs(additionalTreasureItems) do items[id] = true end
 for id in pairs(gatheringNodeItems) do items[id] = true end
+for id in pairs(mobDropItems) do items[id] = true end
+for id in pairs(questRewardItems) do items[id] = true end
+for id in pairs(weeklyQuestItems) do items[id] = true end
 for id in pairs(miscItems) do items[id] = true end
 for id in pairs(patronOrderItems) do items[id] = true end

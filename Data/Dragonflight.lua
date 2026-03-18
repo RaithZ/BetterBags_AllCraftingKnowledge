@@ -214,6 +214,8 @@ local worldDrops = {
     [210461] = true, -- Exceedingly Soft Wildercloth
     [210463] = true, -- Snuggle Buddy
     [210462] = true, -- Plush Pillow
+    -- Skinning
+    [205451] = true, -- Flawless Crystal Scale (+3 KP, Elusive Crystalscale Stonecleaver, Zaralek Cavern — one-time)
 }
 
 -- ============================================================
@@ -243,6 +245,17 @@ local gatheringNodeItems = {
     -- Herbalism/Mining Field Notes
     [199115] = true, -- Herbalism Field Notes (+3 KP)
     [199122] = true, -- Mining Field Notes (+3 KP)
+    -- Skinning
+    [194040] = true, -- Slateskin Hide (+1 KP)
+    [194066] = true, -- Frigid Frostfur Pelt (+1 KP)
+    [194067] = true, -- Festering Carcass (+1 KP)
+    [194068] = true, -- Progenitor Scales (+1 KP)
+    [194076] = true, -- Exotic Resilient Leather (+1 KP)
+    [194077] = true, -- Pristine Adamant Scales (+1 KP)
+    [198837] = true, -- Curious Hide Scraps (+1 KP, 5/week)
+    [198841] = true, -- Large Sample of Curious Hide (+2 KP, 1/week)
+    [199128] = true, -- Skinning Field Notes (+3 KP, quest reward)
+    [202016] = true, -- Saturated Bone (+1 KP)
 }
 
 -- ============================================================
@@ -255,6 +268,7 @@ local mobDropItems = {
     [198963] = true, -- Decaying Phlegm (+1 KP)
     [198964] = true, -- Elementious Splinter (+1 KP)
     -- Blacksmithing
+    [192130] = true, -- Sundered Flame Weapon Mold (+1 KP)
     [192131] = true, -- Valdrakken Weapon Chain (+1 KP)
     [192132] = true, -- Draconium Blade Sharpener (+1 KP)
     [198965] = true, -- Primeval Earth Fragment (+1 KP)
@@ -303,6 +317,7 @@ local forbiddenReachDrops = {
     [204228] = true, -- Undigested Hochenblume Petal (+1 Herbalism)
     [204229] = true, -- Glimmering Rune of Arcantrix (+1 Inscription)
     [204230] = true, -- Dense Seaforged Javelin (+1 Blacksmithing)
+    [204231] = true, -- Kingly Sheepskin Pelt (+1 Skinning)
     [204232] = true, -- Slyvern Alpha Claw (+1 Leatherworking)
     [204233] = true, -- Impenetrable Elemental Core (+1 Mining)
     [204632] = true, -- Tectonic Rock Fragment (+1 Mining)
@@ -338,8 +353,10 @@ local notebooksOfKnowledge = {
     [201715] = true, -- Notebook of Crafting Knowledge - Tailoring (+5 KP)
     [201705] = true, -- Notebook of Crafting Knowledge - Herbalism (+5 KP)
     [201700] = true, -- Notebook of Crafting Knowledge - Mining (+5 KP)
+    [201714] = true, -- Notebook of Crafting Knowledge - Skinning (+5 KP)
     [201717] = true, -- Notebook of Crafting Knowledge - Herbalism (+10 KP)
     [201716] = true, -- Notebook of Crafting Knowledge - Mining (+10 KP)
+    [201718] = true, -- Notebook of Crafting Knowledge - Skinning (+10 KP)
 }
 
 -- ============================================================
@@ -355,6 +372,7 @@ local barteredNotes = {
     [205425] = true, -- Bartered Leatherworking Notes
     [205431] = true, -- Bartered Mining Notes
     [205432] = true, -- Bartered Herbalism Notes
+    [205433] = true, -- Bartered Skinning Notes
     [205430] = true, -- Bartered Tailoring Notes
 }
 
@@ -371,6 +389,7 @@ local barteredJournals = {
     [205436] = true, -- Bartered Leatherworking Journal
     [205442] = true, -- Bartered Mining Journal
     [205443] = true, -- Bartered Herbalism Journal
+    [205444] = true, -- Bartered Skinning Journal
     [205441] = true, -- Bartered Tailoring Journal
 }
 
