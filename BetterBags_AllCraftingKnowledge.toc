@@ -3,7 +3,7 @@
 ## Title: BetterBags - All Crafting Knowledge
 ## Notes: Adds an "All Crafting Knowledge" category to BetterBags for all profession knowledge items across Dragonflight, The War Within, and Midnight.
 ## Version: 1.0.12
-## Author:
+## Author: RaithZ
 ## X-Curse-Project-ID:
 ## X-WoWI-ID:
 ## Dependencies: BetterBags
