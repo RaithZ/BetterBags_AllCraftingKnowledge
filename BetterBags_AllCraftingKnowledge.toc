@@ -1,8 +1,8 @@
-## Interface: 120100,120007,120005
-## Interface-Retail: 120100,120007,120005
+## Interface: 120107,120105,120100,120007,120005
+## Interface-Retail: 120107,120105,120100,120007,120005
 ## Title: BetterBags - All Crafting Knowledge
 ## Notes: Adds an "All Crafting Knowledge" category to BetterBags for all profession knowledge items across Dragonflight, The War Within, and Midnight.
-## Version: 1.0.15
+## Version: 1.0.16
 ## Author: RaithZ
 ## X-Curse-Project-ID:
 ## X-WoWI-ID:
